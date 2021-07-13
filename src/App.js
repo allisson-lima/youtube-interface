@@ -14,7 +14,7 @@ function App() {
         main: '#f44336'
       },
       secondary:{
-        main: '#6a1b9a'
+        main: '#3f51b5'
       }
     },
   });
