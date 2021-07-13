@@ -188,7 +188,12 @@ const useStyles = makeStyles((theme) => ({
     },
 
     ContainerButton:{
+        padding: 10
+    },
+    Content:{
+        paddingTop: 10
     }
+
     
   }));
 
@@ -360,18 +365,20 @@ export default function Home(){
       <Box p={1}>
       <Divider />
                 <Toolbar/>
-                
+                <Divider />
                <div className={classes.ContainerButton}>
-               <Divider />
+             
         
                <Button className={classes.ButtonBarOne} variant="contained" size="small">Todos</Button>
                <Button className={classes.ButtonBar} variant="contained" size="small">Música</Button>
                <Button className={classes.ButtonBar} variant="contained" size="small">Em Direto</Button>
                <Button className={classes.ButtonBar} variant="contained" size="small">Javascript</Button>
                <Button className={classes.ButtonBar} variant="contained" size="small">React js Avançado</Button>
+               <Button className={classes.ButtonBar} variant="contained" size="small">Os cavaleiros do Zodíaco</Button>
+               <Button className={classes.ButtonBar} variant="contained" size="small">Bita e os Animais</Button>
 
                </div>
-
+               <Divider />
 
 
                 {/* <Typography
@@ -382,7 +389,7 @@ export default function Home(){
                     Recomendados
                 </Typography> */}
 
-                <Grid container spacing={2}>
+                <Grid container spacing={2} className={classes.Content}>
                 {
                  videos.map((item, index) => (
                      <Grid item lg={3} md={4} sm={6} xs={12}>
