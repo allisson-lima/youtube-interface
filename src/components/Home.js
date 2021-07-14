@@ -15,8 +15,10 @@ import {
     Box,
     Grid,
     Hidden,
-   
-   
+    TextField,
+    InputBase,
+    InputAdornment
+
  } from '@material-ui/core'
  import MenuIcon from '@material-ui/icons/Menu';
  import AccountCircle from '@material-ui/icons/AccountCircle';
@@ -32,7 +34,10 @@ import {
  import IconWatchLater from '@material-ui/icons/WatchLater';
  import IconThumbUp from '@material-ui/icons/ThumbUp';
  import IconExpandMore from '@material-ui/icons/ExpandMore';
- import Videos from './Videos'
+ import SearchIcon from '@material-ui/icons/Search';
+ import KeyboardIcon from '@material-ui/icons/Keyboard';
+ import MicIcon from '@material-ui/icons/Mic';
+
  const videos = [
     {
       id: 1,
@@ -123,6 +128,10 @@ const useStyles = makeStyles((theme) => ({
       height: '100vh',
     //   padding: theme.spacing(3)
     },
+    margin: {
+      margin: theme.spacing(1),
+    },
+  
     appBar:{
         boxShadow: 'none',
         zIndex: theme.zIndex.drawer + 1
@@ -192,8 +201,44 @@ const useStyles = makeStyles((theme) => ({
     },
     Content:{
         paddingTop: 10
-    }
-
+    },
+    search: {
+        backgroundColor: '#ccc',
+        width: '50%',
+        position: 'relative',
+        marginLeft: 150,
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        paddingLeft: 5,
+       
+      },
+      searchIcon: {
+        padding: 8,
+        height: '100%',
+        position: 'absolute',     
+        display: 'flex',
+        alignItems: 'center',
+        marginLeft: '93%'
+      },
+      TextField:{
+        // border:  "1px solid #ccc",
+        height: 29,
+        width: '40%',
+        marginLeft: 155,
+        flexDirection: 'row',
+        borderRadius: 'none',
+        '& .MuiOutlinedInput-root': {
+          borderRadius: '1px',
+        },
+      },
+      IconTeclado:{
+        height: 29,
+        borderRadius: 0
+      },
+      IconTeclado1:{
+       marginLeft: -120
+      }
+      
     
   }));
 
@@ -208,6 +253,25 @@ export default function Home(){
             <MenuIcon />
           </IconButton>
           <img src="/images/preto.png" alt="Logo" className={classes.Logo}/>
+
+          
+        <TextField
+        placeholder="Pesquisa"
+        color="secondary"
+        variant="outlined"
+        fullWidth
+        classes={{root: classes.TextField}}
+        />
+                
+        
+            <Button classes={{root: classes.IconTeclado}} variant="outlined" size="small"><SearchIcon /></Button>
+
+            <Button classes={{root: classes.IconTeclado1}} size="small" style={{ color: '#757575' }} ><KeyboardIcon/></Button>
+                    
+
+            <Button style={{marginLeft: 55}} size="small"  ><MicIcon/></Button>
+            
+
           <div className={classes.grow}/>
 
           <IconButton className={classes.icons} color="inherit">
@@ -238,12 +302,13 @@ export default function Home(){
         <Toolbar />
         <div className={classes.drawerContainer}>
           <List>           
-              <ListItem button classes={{root: classes.listItem}}>
-                <ListItemIcon>{<IconHome/>}</ListItemIcon>
+              <ListItem button classes={{root: classes.listItem}} style={{backgroundColor: '#ccc'}}>
+                <ListItemIcon>{<IconHome color="primary"/>}</ListItemIcon>
                 <ListItemText 
                 classes={{
                     primary: classes.listItemText
                 }}
+                
                 primary={'Início'} />
               </ListItem>
               
@@ -379,16 +444,6 @@ export default function Home(){
 
                </div>
                <Divider />
-
-
-                {/* <Typography
-                variant='h5'
-                color='textPrimary'
-                style={{fontWeight: 500}}
-                >
-                    Recomendados
-                </Typography> */}
-
                 <Grid container spacing={2} className={classes.Content}>
                 {
                  videos.map((item, index) => (
