@@ -302,7 +302,7 @@ export default function Home(){
         <Toolbar />
         <div className={classes.drawerContainer}>
           <List>           
-              <ListItem button classes={{root: classes.listItem}} style={{backgroundColor: '#ccc'}}>
+              <ListItem button classes={{root: classes.listItem}} style={{backgroundColor: '#e0e0e0'}}>
                 <ListItemIcon>{<IconHome color="primary"/>}</ListItemIcon>
                 <ListItemText 
                 classes={{
