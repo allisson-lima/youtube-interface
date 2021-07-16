@@ -16,8 +16,7 @@ import {
     Grid,
     Hidden,
     TextField,
-    InputBase,
-    InputAdornment
+    
 
  } from '@material-ui/core'
  import MenuIcon from '@material-ui/icons/Menu';
@@ -124,9 +123,7 @@ import {
 
 const useStyles = makeStyles((theme) => ({
     root:{
-    //   background: theme.palette.primary.main,
       height: '100vh',
-    //   padding: theme.spacing(3)
     },
     margin: {
       margin: theme.spacing(1),
@@ -202,16 +199,7 @@ const useStyles = makeStyles((theme) => ({
     Content:{
         paddingTop: 10
     },
-    search: {
-        backgroundColor: '#ccc',
-        width: '50%',
-        position: 'relative',
-        marginLeft: 150,
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        paddingLeft: 5,
-       
-      },
+    
       searchIcon: {
         padding: 8,
         height: '100%',
